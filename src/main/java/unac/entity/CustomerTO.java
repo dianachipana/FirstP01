@@ -13,6 +13,8 @@ public class CustomerTO {
     private String address;
     private String active;
     private String customerid;
+    private String storeid;
+    private String addresid;
     
     public CustomerTO(String fname, String lname, String email, String address, String customerid,String active){
         this.fname=fname;

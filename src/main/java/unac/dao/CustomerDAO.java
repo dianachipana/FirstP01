@@ -23,13 +23,14 @@ public class CustomerDAO implements ICrudDao<CustomerTO> {
         try {
             cn = AccesoDB.getConnection();
             
-            CallableStatement cs = cn.prepareCall("{call usp_Empleado_Adicionar(?,?,?,?,?,?)}");
-            cs.setString(1, t.getFname());
-            cs.setString(1, t.getLname());
-            cs.setString(1, t.getEmail());
+            CallableStatement cs = cn.prepareCall("{call usp_Empleado_Adicionar(?,?,?,?,?,?,?,?,?)}");
             cs.setString(1, t.getAddress());
-            cs.setString(1, t.getCustomerid());
-            cs.setString(1, t.getActive());
+            cs.setString(3, t.getFname());
+            cs.setString(4, t.getLname());
+            cs.setString(5, t.getEmail());
+            
+            cs.setString(6, t.getCustomerid());
+            cs.setString(7, t.getActive());
         } catch (SQLException e) {
             throw e;
         } finally {
